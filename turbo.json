@@ -1,0 +1,38 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build:pro": {
+      "dependsOn": [],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "//#build:pro": {
+      "dependsOn": ["^koi-ui#build:pro"],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "dev": {
+      "dependsOn": [
+        "^dev"
+      ],
+      "persistent": true,
+      "cache": false
+    },
+    "start:dev": {
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "//#start:dev": {}
+  }
+}
