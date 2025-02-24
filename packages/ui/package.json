@@ -1,15 +1,19 @@
 {
-  "name": "koi-ui",
+  "name": "@koi/ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "start:dev": "vite",
-    "build:pro": "vue-tsc -b && vite build",
+    "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
+  "exports": {
+    "./ProTable": {
+      "import": "./src/components/ProTable/index.ts"
+    }
+  },
   "dependencies": {
-    "@koi/ui": "^0.0.1",
+    "ant-design-vue": "^4.2.6",
     "vue": "^3.5.13"
   },
   "devDependencies": {

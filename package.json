@@ -25,7 +25,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "workspaces": [
-    "koi-ui"
+    "koi-ui",
+    "packages/*"
   ],
   "build": {
     "icon": "app.png",
