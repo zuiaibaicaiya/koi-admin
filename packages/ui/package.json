@@ -7,20 +7,34 @@
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/KoiUi.cjs",
+  "module": "./dist/KoiUi.js",
+  "typings": "./dist/KoiUi.d.ts",
   "exports": {
+    ".": {
+      "typings": "./dist/KoiUi.d.ts",
+      "import": "./dist/KoiUi.js",
+      "require": "./dist/KoiUi.cjs"
+    },
     "./ProTable": {
-      "import": "./src/components/ProTable/index.ts"
+      "typings": "./dist/ProTable.d.ts",
+      "import": "./dist/ProTable.js",
+      "require": "./dist/ProTable.umd.cjs"
     }
   },
   "dependencies": {
-    "ant-design-vue": "^4.2.6",
     "vue": "^3.5.13"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.7.2",
+    "unplugin-vue-components": "^28.4.1",
     "vite": "^6.1.0",
+    "vite-plugin-dts": "^4.5.0",
     "vue-tsc": "^2.2.0"
   }
 }

@@ -1,8 +1,20 @@
 <script setup lang="ts">
-import { Table, Form, FormItem, Input, Button, Space, type FormInstance } from 'ant-design-vue';
-import type { IProTableProps, IProTableState } from '../index.ts';
+import { type FormInstance } from 'ant-design-vue';
 import { reactive, useTemplateRef } from 'vue';
 import type { UnwrapRef } from 'vue';
+
+interface IProTableProps extends Record<any, any> {
+  title: string;
+  dataIndex: string;
+  key: string;
+}
+
+interface IProTableState extends Record<any, any> {
+  key: string;
+  name: string;
+  age: number;
+  address: string;
+}
 
 interface FormState {
   fieldA: string;
@@ -25,24 +37,24 @@ function reset() {
 </script>
 
 <template>
-  <Form
+  <a-form
     layout="horizontal"
     :model="formState" :labelCol="{ span: 4 }"
     :wrapperCol="{ span: 14 }"
     ref="formRef"
   >
-    <FormItem label="Field A" name="fieldA">
-      <Input v-model:value="formState.fieldA" placeholder="input placeholder" />
-    </FormItem>
-    <FormItem :wrapper-col="{ span: 14 }">
-      <Space>
-        <Button htmlType="submit" type="primary">Submit</Button>
-        <Button htmlType="reset" @click="reset">reset</Button>
+    <a-form-item label="Field A" name="fieldA">
+      <a-input v-model:value="formState.fieldA" placeholder="input placeholder" />
+    </a-form-item>
+    <a-form-item :wrapper-col="{ span: 14 }">
+      <a-space>
+        <a-button htmlType="submit" type="primary">Submit</a-button>
+        <a-button htmlType="reset" @click="reset">reset</a-button>
 
-      </Space>
-    </FormItem>
-  </Form>
-  <Table :columns="props.columns" :data-source="props.dataSource" />
+      </a-space>
+    </a-form-item>
+  </a-form>
+  <a-table :columns="props.columns" :data-source="props.dataSource" />
 </template>
 
 <style scoped>

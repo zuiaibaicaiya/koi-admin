@@ -8,7 +8,17 @@
       ]
     },
     "//#build:pro": {
-      "dependsOn": ["^koi-ui#build:pro"],
+      "dependsOn": [
+        "koi-ui#build:pro"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "koi-ui#build:pro": {
+      "dependsOn": [
+        "@koi/ui#build"
+      ],
       "outputs": [
         "dist/**"
       ]

@@ -66,6 +66,7 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.7",
     "@types/supertest": "^6.0.2",
+    "ant-design-vue": "^4.2.6",
     "electron": "^34.2.0",
     "electron-builder": "^25.1.8",
     "eslint": "^9.18.0",

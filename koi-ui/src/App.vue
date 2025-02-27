@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
-import { type IProTableProps, type IProTableState, ProTable } from '@koi/ui/ProTable';
+import { ProTable } from '@koi/ui';
 
-const columns: IProTableProps[] = [
+const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
@@ -22,9 +22,9 @@ const columns: IProTableProps[] = [
     title: 'height',
     key: 'height',
     dataIndex: 'height',
-  }
+  },
 ];
-const data: IProTableState[] = [
+const data = [
   {
     key: '1',
     name: 'John Brown',
